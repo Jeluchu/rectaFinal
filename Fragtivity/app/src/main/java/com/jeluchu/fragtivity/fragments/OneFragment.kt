@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import com.jeluchu.fragtivity.R
 import kotlinx.android.synthetic.main.fragment_one.*
 
@@ -23,13 +24,15 @@ class OneFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_one, container, false)
 
-        btnBool.setOnClickListener {
+        val btnBole = view.findViewById<Button>(R.id.btnBool)
 
-            val fragmentTwo = TwoFragment()
+        btnBole.setOnClickListener {
 
-            val bundle = Bundle()
-            bundle.putBoolean("bool", true)
-            fragmentTwo.arguments = bundle
+            val fragmentTwo = TwoFragment.newInstance(true)
+            activity!!.supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.message, fragmentTwo, fragmentTwo.javaClass.simpleName)
+                .commit()
         }
 
         return view

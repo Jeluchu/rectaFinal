@@ -5,11 +5,27 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import com.jeluchu.fragtivity.R
 import kotlinx.android.synthetic.main.fragment_two.*
 
 class TwoFragment : Fragment() {
+
+    companion object {
+        fun newInstance(boolean: Boolean): TwoFragment {
+
+            val fragment = TwoFragment()
+            val bundle = Bundle()
+
+            fragment.arguments = bundle
+            bundle.putBoolean("bool", boolean)
+
+            return fragment
+        }
+    }
+
+    private var condicion: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,16 +36,11 @@ class TwoFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_two, container, false)
 
-        val bundle: Bundle? = arguments
-        lateinit var others: String
+        val tvBoolean = view.findViewById<TextView>(R.id.booleans)
 
-        if (bundle != null) {
-            others = bundle.getSerializable("bool") as String
-            booleans.text = others
-        } else {
-            Toast.makeText(activity, "Error...", Toast.LENGTH_SHORT).show()
-        }
+        condicion = arguments!!.getBoolean("bool")
 
+        tvBoolean.text = condicion.toString()
 
 
         return view
