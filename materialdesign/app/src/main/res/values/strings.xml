@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MaterialDesign</string>
+    <string name="text">Introduce un texto</string>
+    <string name="inicio">Inicio</string>
+    <string name="series">Series</string>
+    <string name="peliculas">Películas</string>
+    <string name="ajustes">Ajustes</string>
+</resources>
