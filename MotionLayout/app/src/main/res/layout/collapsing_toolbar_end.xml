@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:tint="@color/black"
+            android:src="@drawable/ic_back"/>
+
+    <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:visibility="visible"/>
+
+
+    <ImageView
+            android:id="@+id/ivTitle"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:scaleType="centerCrop"
+            android:alpha="0"
+            app:srcCompat="@drawable/ic_otaku"
+            tools:ignore="ContentDescription"/>
+
+    <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="19sp"/>
+
+    <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivTitle"
+            app:layout_constraintTop_toTopOf="@id/ivTitle"
+            android:alpha="0"
+            android:gravity="center"
+            android:textColor="@color/gray"
+            android:textSize="15sp"
+            android:visibility="invisible"/>
+
+    <View
+            android:id="@+id/vDivider"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription"
+            android:background="@color/gray"/>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
