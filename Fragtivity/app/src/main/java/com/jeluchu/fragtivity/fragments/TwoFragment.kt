@@ -38,7 +38,9 @@ class TwoFragment : Fragment() {
 
         val tvBoolean = view.findViewById<TextView>(R.id.booleans)
 
-        condicion = arguments!!.getBoolean("bool")
+        if (arguments != null) {
+            condicion = arguments!!.getBoolean("bool")
+        }
 
         tvBoolean.text = condicion.toString()
 
