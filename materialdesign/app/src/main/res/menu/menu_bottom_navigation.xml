@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/attach_file"
+            android:title="@string/inicio"
+            android:icon="@drawable/ic_home"
+    />
+    <item
+            android:id="@+id/delete"
+            android:title="@string/series"
+            android:icon="@drawable/ic_serie"
+    />
+    <item
+            android:id="@+id/insert_chart"
+            android:title="@string/peliculas"
+            android:icon="@drawable/ic_movie"
+    />
+    <item
+            android:id="@+id/insert_link"
+            android:title="@string/ajustes"
+            android:icon="@drawable/ic_settings"
+    />
+
+</menu>
