@@ -13,19 +13,19 @@ import kotlinx.android.synthetic.main.fragment_two.*
 class TwoFragment : Fragment() {
 
     companion object {
-        fun newInstance(boolean: Boolean): TwoFragment {
+        fun newInstance(string: String): TwoFragment {
 
             val fragment = TwoFragment()
             val bundle = Bundle()
 
             fragment.arguments = bundle
-            bundle.putBoolean("bool", boolean)
+            bundle.putString("string", string)
 
             return fragment
         }
     }
 
-    private var condicion: Boolean = false
+    private var condicion: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +39,7 @@ class TwoFragment : Fragment() {
         val tvBoolean = view.findViewById<TextView>(R.id.booleans)
 
         if (arguments != null) {
-            condicion = arguments!!.getBoolean("bool")
+            condicion = arguments!!.getString("string")
         }
 
         tvBoolean.text = condicion.toString()
