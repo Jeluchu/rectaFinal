@@ -1,4 +1,4 @@
-package com.jeluchu.splashscreen
+package inventariounisys.jeluchu.com.inventariounisys
 
 import org.junit.Test
 
