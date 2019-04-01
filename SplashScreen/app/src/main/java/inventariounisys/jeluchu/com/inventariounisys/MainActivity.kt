@@ -40,8 +40,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        loadSplash()
-        finishSplash()
+        //loadSplash()
+        //finishSplash()
 
         //ESTABLECEMOS LA TOOLBAR
         toolbar = findViewById(R.id.mainToolbar)
@@ -65,7 +65,21 @@ class MainActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance()
         myRef = database.getReference(Constants.FIREBASE_ITEM)
 
-        deviceListenerFirebase()
+        //Progresbar visible
+
+        deviceListenerFirebase(object : OnLoad{
+            override fun onLoad(string: String) {
+                mainContainer.visibility = View.VISIBLE
+                splash.visibility = View.GONE
+            }
+
+            override fun onCancel(string: String) {
+                mainContainer.visibility = View.VISIBLE
+                splash.visibility = View.GONE
+                Toast.makeText(applicationContext, "error", Toast.LENGTH_SHORT).show()
+            }
+
+        })
         userChanged()
         getUserSharedPreferences()
         fabAddDevicesAdminRol()
@@ -91,7 +105,7 @@ class MainActivity : AppCompatActivity() {
                 @SuppressLint("SetTextI18n")
                 override fun run() {
 
-                    if (i < 100) {
+                    if (i < 1) {
                         progBar.progress = i
                         i++
                     } else {
@@ -269,14 +283,16 @@ class MainActivity : AppCompatActivity() {
 
 
     // FIREBASE DATOS DE DISPOSITIVOS
-    private fun deviceListenerFirebase() {
+    private fun deviceListenerFirebase(onLoad: OnLoad) {
 
         val deviceListListener = object : ChildEventListener{
 
             // CANCELAR EN BASE DE DATOS
             override fun onCancelled(p0: DatabaseError) {
+                onLoad.onCancel(p0.toString())
                 Toast.makeText(this@MainActivity.applicationContext, "Failed to load comments.",
                         Toast.LENGTH_SHORT).show()
+
             }
 
             // MOVIMIENTOS EN LA BASE DE DATOS
@@ -318,6 +334,7 @@ class MainActivity : AppCompatActivity() {
                         p0.child("mac").value.toString(),
                         p0.child("prestado").value.toString().toBoolean()))
                 loadDevicesOnrecyclerView()
+                onLoad.onLoad("cargado")
             }
 
             // ELIMINACIÓN EN LA BASE DE DATOS
@@ -334,6 +351,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
         myRef.addChildEventListener(deviceListListener)
+    }
+
+    interface OnLoad{
+        fun onLoad(string: String)
+        fun onCancel(string: String)
     }
 }
 
