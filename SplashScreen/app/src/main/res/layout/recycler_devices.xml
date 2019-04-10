@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/layoutID"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/glv20"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <ImageView
+        android:id="@+id/dispositivo"
+        android:layout_width="62dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_smartphone"
+        android:foregroundGravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/glv40" />
+
+    <ImageView
+        android:id="@+id/so"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_android"
+        app:layout_constraintBottom_toBottomOf="@+id/dispositivo"
+        app:layout_constraintHorizontal_bias="0.851"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/glv40"
+        tools:layout_editor_absoluteY="80dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/glv40"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <TextView
+        android:id="@+id/tvMarca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        app:layout_constraintStart_toStartOf="@+id/glv40"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Marca" />
+
+    <TextView
+        android:id="@+id/tvModelo"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="@+id/glv40"
+        app:layout_constraintTop_toTopOf="@id/tvMarca"
+        tools:text="Modelo" />
+
+    <TextView
+        android:id="@+id/numSerie"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="@+id/glv40"
+        app:layout_constraintTop_toTopOf="@id/tvModelo"
+        tools:text="Número de Serie" />
+
+    <TextView
+        android:id="@+id/mac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="@+id/glv40"
+        app:layout_constraintTop_toTopOf="@id/numSerie"
+        tools:text="MAC" />
+
+    <TextView
+        android:id="@+id/categoria"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="@+id/glv40"
+        app:layout_constraintTop_toTopOf="@id/mac"
+        tools:text="Categoría" />
+
+    <TextView
+        android:id="@+id/prestado"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/layoutID"
+        app:layout_constraintStart_toStartOf="@+id/glv40"
+        app:layout_constraintTop_toTopOf="@id/categoria"
+        app:layout_constraintVertical_bias="0.142"
+        tools:text="Prestado" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/glv80"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <View
+        android:id="@+id/rectanguloEstado"
+        android:layout_width="18dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rectangulo"
+        app:layout_constraintRight_toLeftOf="@+id/glv90"
+        app:layout_constraintStart_toStartOf="@+id/glv80"
+        app:layout_constraintTop_toTopOf="@id/layoutID"
+        tools:ignore="MissingConstraints" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/glv90"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+
+    <ImageButton
+        android:id="@+id/ibPeticion"
+        android:layout_width="34dp"
+        android:layout_height="114dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_navigate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/glv90"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/glv90"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        app:layout_constraintBottom_toBottomOf="@id/layoutID"
+        android:background="@android:color/darker_gray"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Inventario Unisys</string>
+    <string name="usuarios">Usuarios</string>
+    <string name="title_activity_login">Iniciar Sesión</string>
+    <!-- Strings related to login -->
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Iniciar</string>
+    <string name="action_sign_in_short">Inicio</string>
+    <string name="error_invalid_password">La contraseña es demasiado corta</string>
+    <string name="error_incorrect_password">La contraseña es incorrecta</string>
+    <string name="error_field_required">Este campo es obligatorio</string>
+    <string name="porcentaje">Porcentaje</string>
+
+    <string-array name="dispositivos">
+        <item>Móvil</item>
+        <item>Tablet</item>
+        <item>Smartwatch</item>
+        <item>TV</item>
+    </string-array>
+</resources>
