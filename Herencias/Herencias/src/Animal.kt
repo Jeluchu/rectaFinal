@@ -1,0 +1,1 @@
+open class Animal (var dueno: Boolean, var nombreDueno: String)
